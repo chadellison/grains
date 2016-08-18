@@ -4,18 +4,15 @@ var BigInt = require('./big-integer.js');
 
 class Grains {
   square(count) {
-    return this.countGrains(count).toString()
-  }
-  countGrains(count) {
-    let grains = count
+    let grains = count.toString()
     if (count > 2) {
-      grains = BigInt(2).pow(count - 1)
+      grains = BigInt(2).pow(count - 1).toString()
     }
     return grains
   }
 
   total() {
-    return this.countGrains(65).prev().toString()
+    return BigInt(2).pow(64).prev().toString()
   }
 }
 
